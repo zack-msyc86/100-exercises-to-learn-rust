@@ -5,7 +5,7 @@ fn easy_ticket(title: String, description: String, status: Status) -> Ticket {
     match Ticket::new(title.clone(), description, status.clone()) {
         Ok(value) => return value,
         Err(message) => {
-            if message == "Description cannot be empty" {
+            if message == "Description cannot be longer than 500 bytes" || message == "Description cannot be empty" {
                 return Ticket::new(
                     title,
                     "Description not provided".to_string(),
