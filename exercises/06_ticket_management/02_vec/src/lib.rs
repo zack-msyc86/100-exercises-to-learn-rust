@@ -15,7 +15,11 @@ pub fn fibonacci(n: u32) -> u32 {
     //
     // Hint: use a `Vec` to memoize the results you have already calculated
     // so that you don't have to recalculate them several times.
-    todo!()
+    match n {
+        0 => 0,
+        1 => 1,
+        _ => fibonacci(n-2) + fibonacci(n-1)
+    }
 }
 
 #[cfg(test)]
